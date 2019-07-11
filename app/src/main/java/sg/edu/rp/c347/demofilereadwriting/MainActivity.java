@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                     File targetFile = new File(folderLocation, "data.txt");
 
                     FileWriter writer = new FileWriter(targetFile, true);
+                    //false will overwrite with the first line
+                    //true adds to the line
                     writer.write("Hello world" + "\n");
                     writer.flush();
                     writer.close();
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         btnRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String folderLocation = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Test";
+                String folderLocation = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Folder";
                 File targetFile = new File(folderLocation, "data.txt");
 
                 if (targetFile.exists() == true) {
